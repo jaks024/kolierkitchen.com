@@ -1,0 +1,262 @@
+@keyframes fadeIn {
+    0% {
+        background: black;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+html,
+body {
+    animation: 1s ease-in-out 0s 1 fadeIn;
+    zoom: 1;
+    transform: scale(1.0);
+    transform-origin: 0 0;
+    background: black;
+    overflow: hidden;
+    height: 100%;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    width: 100%;
+
+}
+
+.wrapper-nav-underlay{
+    position: absolute;
+    z-index: 0;
+    color: black;
+    min-width: 325px;
+    transition: opacity, transform, 0.5s ease;
+}
+
+.wrapper-nav {
+    position: relative;
+    min-width: 325px;
+    width: 20%;
+    height: 100%;
+    transition:  opacity, transform, 0.5s ease;
+    background-color: rgb(19, 19, 19);
+    color: white;
+    z-index: 1;
+}
+
+.simplebar-content{
+    height: 100%;
+}
+
+.wrapper-nav-btn{
+    position: relative;
+    width: 250px;
+    height: 30px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    top: 30px;
+    margin: auto;
+}
+
+.nav-btn{
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 5;
+}
+
+.nav-btn:hover > .nav-btn-line-1, .nav-btn:hover > .nav-btn-line-4{
+    opacity: 0;
+}
+.nav-btn:hover > .nav-btn-line-2{
+    transform: rotateZ(45deg);
+}
+.nav-btn:hover > .nav-btn-line-3{
+    transform: rotateZ(-45deg);
+}
+
+
+.nav-btn-line{
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+    transition: transform, opacity, 0.5s ease;
+}
+
+.nav-btn-line-1{
+    top: 0px;
+}
+.nav-btn-line-2{
+    top: 10px;
+}
+.nav-btn-line-3{
+    top: 10px;
+}
+.nav-btn-line-4{
+    bottom: 0px;
+}
+
+.nav-content{
+    height: 100%;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper-comp-name {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 250px;
+    margin: auto;
+    min-height: 200px;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: left;
+    line-height: 50px;
+}
+
+.comp-name{
+    position: relative;
+    top: 60px;
+    padding-left: 10px;
+}
+
+
+nav {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+nav > ul {
+    position: relative;
+    height: 225px;
+}
+
+nav > ul > li {
+    position: relative;
+    height: fit-content;
+    margin-top: 20px;
+}
+
+.nav-item{
+    position: relative;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+    line-height: 25px;
+    padding-left: 10px;
+    width: 250px;
+    height: 25px;
+    margin: auto;
+}
+
+.nav-indic{
+    transition: box-shadow, color, 0.5s ease;
+}
+
+.nav-indic:hover{
+    color: rgb(209, 209, 209);
+    box-shadow: -15px 0px white;
+}
+
+.nav-sub {
+    position: relative;
+    margin: auto;
+    width:  250px;
+    line-height: 25px;
+    padding-left: 10px;
+}
+
+
+footer {
+    position: relative;
+    width: 100%;
+    height: 75px;
+    color: rgb(134, 134, 134);
+}
+
+.wrapper-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.wrapper-scroll {
+    height: 100%;
+    overflow: auto;
+    margin: 0px;
+}
+
+.content {
+    position: relative;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    min-width: 600px;
+    width: 100%;
+    height: 100%;
+    min-height: 650px;
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapper-img-col {
+    width: 33.3%;
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+.img-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.wrapper-img-item {
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.img-item {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 10px 0px;
+    transition: filter 0.5s ease;
+}
+
+.img-item:hover{
+    filter: brightness(0.8);
+}
+
+img {
+    object-fit: contain;
+}
+
+
+
+.show{
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.hide{
+    opacity: 0;
+    transform: translateX(-325px);
+}
