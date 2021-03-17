@@ -35,9 +35,10 @@ body {
 .wrapper-nav-underlay{
     position: absolute;
     z-index: 0;
-    color: black;
+    color: rgb(19, 19, 19);
     min-width: 325px;
-    transition: opacity, transform, 0.5s ease;
+    transition: all 0.5s ease;
+    transition-property: opacity, transform;
 }
 
 .wrapper-nav {
@@ -45,7 +46,8 @@ body {
     min-width: 325px;
     width: 20%;
     height: 100%;
-    transition:  opacity, transform, 0.5s ease;
+    transition: all 0.5s ease;
+    transition-property: opacity, transform;
     background-color: rgb(19, 19, 19);
     color: white;
     z-index: 1;
@@ -70,6 +72,7 @@ body {
     width: 30px;
     height: 20px;
     z-index: 5;
+    cursor: pointer;
 }
 
 .nav-btn:hover > .nav-btn-line-1, .nav-btn:hover > .nav-btn-line-4{
@@ -89,7 +92,12 @@ body {
     width: 100%;
     background-color: white;
     z-index: 2;
-    transition: transform, opacity, 0.5s ease;
+    transition: all 0.5s ease;
+    transition-property: transform, opacity;
+}
+
+.nav-btn-line-underlay{
+    background-color: rgb(19, 19, 19);;
 }
 
 .nav-btn-line-1{
@@ -103,6 +111,31 @@ body {
 }
 .nav-btn-line-4{
     bottom: 0px;
+}
+
+.language-btn {
+    position: absolute;
+    top: 28px;
+    font-size: 25px;
+    font-weight: bold;
+    width: 30px;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 5px;
+    left: 105px;
+    z-index: 6;
+    transition: all 0.5s ease;
+    transition-property: box-shadow, color;
+    cursor: pointer;
+}
+
+.inner-language-btn{
+    left: 105px;
+}
+
+.language-btn:hover{
+    color: rgb(31, 31, 31);
+    box-shadow: -15px 0px rgb(19, 19, 19);
 }
 
 .nav-content{
@@ -131,6 +164,9 @@ body {
     padding-left: 10px;
 }
 
+.comp-name-underlay{
+    top: 50px;
+}
 
 nav {
     position: relative;
@@ -162,7 +198,9 @@ nav > ul > li {
 }
 
 .nav-indic{
-    transition: box-shadow, color, 0.5s ease;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    transition-property: box-shadow, color;
 }
 
 .nav-indic:hover{
