@@ -83,6 +83,7 @@ body {
     width: 30px;
     height: 20px;
     z-index: 5;
+    cursor: pointer;
 }
 
 .nav-btn:hover > .nav-btn-line-1, .nav-btn:hover > .nav-btn-line-4{
@@ -225,12 +226,17 @@ nav > ul > li {
 }
 
 .nav-indic{
+    cursor: pointer;
     transition: all 0.5s ease;
     transition-property: box-shadow, color;
 }
 
 .nav-indic:hover{
     color: rgb(209, 209, 209);
+    box-shadow: -15px 0px white;
+}
+
+.nav-selected {
     box-shadow: -15px 0px white;
 }
 
