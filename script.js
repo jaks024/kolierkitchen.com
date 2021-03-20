@@ -13,8 +13,9 @@ const imgColumns = [document.getElementById("imgCol0"),
 
 const IMG_CSS_CLASS = "img-item"
 const IMG_DIR = "imgs/";
-const IMG_DIR_CAT = ["cabinets/", "countertops/"];
-const IMG_EXT = ".jpg";
+const IMG_DIR_CAT = ["thumbnails/", "countertops/"];
+const IMG_TN_CAT = "imgs/thumbnails/"
+const IMG_EXT = ".webp";
 const IMG_COUNT = [100, 2];
 const IMG_LOAD_DELAY = 150;
 
@@ -58,7 +59,7 @@ async function loadImages() {
     for (let i = 0; i < IMG_COUNT[currentCatInd]; ++i) {
         let img = document.createElement("img");
         img.className = IMG_CSS_CLASS;
-        img.src = IMG_DIR + IMG_DIR_CAT[currentCatInd] + i + IMG_EXT;
+        img.src = IMG_TN_CAT + i + IMG_EXT;
         imgColumns[curCol].appendChild(img);
         curCol = curCol == 0 ? 1 : 0;
         await timer(IMG_LOAD_DELAY);
