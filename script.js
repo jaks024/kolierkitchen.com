@@ -15,7 +15,7 @@ const IMG_CSS_CLASS = "img-item"
 const IMG_DIR = "imgs/";
 const IMG_DIR_CAT = ["cabinets/", "countertops/"];
 const IMG_EXT = ".jpg";
-const IMG_COUNT = [3, 2];
+const IMG_COUNT = [100, 2];
 const IMG_LOAD_DELAY = 150;
 
 var currentCatInd = 1;
