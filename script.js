@@ -4,6 +4,7 @@ const navBar = document.getElementById("navbar");
 const navUnderlay = document.getElementById("navUnderlay");
 
 const C_SHOW = "show";
+const C_SHOW60px = "show60px";
 const C_HIDE = "hide";
 
 const imgColumns = [document.getElementById("imgCol0"),
@@ -40,13 +41,13 @@ function setNavActive() {
     navBar.classList.add(C_SHOW);
     navBar.classList.remove(C_HIDE)
     navUnderlay.classList.add(C_HIDE);
-    navUnderlay.classList.remove(C_SHOW)
+    navUnderlay.classList.remove(C_SHOW60px)
 }
 
 function setNavDisable() {
     navBar.classList.add(C_HIDE);
     navBar.classList.remove(C_SHOW)
-    navUnderlay.classList.add(C_SHOW);
+    navUnderlay.classList.add(C_SHOW60px);
     navUnderlay.classList.remove(C_HIDE)
 }
 
