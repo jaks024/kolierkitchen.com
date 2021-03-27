@@ -16,7 +16,7 @@ const IMG_DIR = "imgs/";
 const IMG_DIR_CAT = ["thumbnails/", "countertops/"];
 const IMG_TN_CAT = "imgs/thumbnails/"
 const IMG_EXT = ".webp";
-const IMG_COUNT = [100, 2];
+const IMG_COUNT = [96, 2];
 const IMG_LOAD_DELAY = 150;
 
 var currentCatInd = 1;
