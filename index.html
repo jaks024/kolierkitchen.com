@@ -22,15 +22,18 @@
     <div class="wrapper">
         <div id="navUnderlay" class="wrapper-nav-underlay">
             <div id="navOpenBtn" class="wrapper-nav-btn">
-                <div  class="nav-btn">
+                <div class="nav-btn">
+                    <button></button>
                     <div class="nav-btn-line nav-btn-line-1 nav-btn-line-underlay"></div>
-                    <div  class="nav-btn-line nav-btn-line-2 nav-btn-line-underlay" ></div>
-                    <div  class="nav-btn-line nav-btn-line-3 nav-btn-line-underlay" ></div>
-                    <div  class="nav-btn-line nav-btn-line-4 nav-btn-line-underlay" ></div>
+                    <div class="nav-btn-line nav-btn-line-2 nav-btn-line-underlay"></div>
+                    <div class="nav-btn-line nav-btn-line-3 nav-btn-line-underlay"></div>
+                    <div class="nav-btn-line nav-btn-line-4 nav-btn-line-underlay"></div>
                 </div>
             </div>
             <div class="language-btn">
-                EN
+                <button>
+                    EN
+                </button>
             </div>
             <div class="wrapper-comp-name wrapper-comp-name-underlay">
                 <div class="comp-name comp-name-underlay">
@@ -42,15 +45,19 @@
             <div class="wrapper-scroll" data-simplebar>
                 <div class="nav-content">
                     <div class="wrapper-nav-btn w-inner-nav-btn">
-                        <div id="navCloseBtn"  class="nav-btn">
+                        <div id="navCloseBtn" class="nav-btn">
+                            <button></button>
                             <div class="nav-btn-line nav-btn-line-1"></div>
-                            <div  class="nav-btn-line nav-btn-line-2"></div>
-                            <div  class="nav-btn-line nav-btn-line-3"></div>
-                            <div  class="nav-btn-line nav-btn-line-4"></div>
+                            <div class="nav-btn-line nav-btn-line-2"></div>
+                            <div class="nav-btn-line nav-btn-line-3"></div>
+                            <div class="nav-btn-line nav-btn-line-4"></div>
                         </div>
                     </div>
                     <div class="language-btn inner-language-btn nav-indic">
-                        EN
+                        <button>
+                            EN
+                        </button>
+
                     </div>
                     <div class="wrapper-comp-name">
                         <div class="comp-name">
@@ -61,11 +68,24 @@
                         <ul>
                             <li>
                                 <div id="catCabinet" class="nav-item nav-indic">
-                                    IMAGES
+                                    <button>
+                                        FINISHED WORKS
+                                    </button>
+
                                 </div>
                                 <br>
-                                <div id="catCountertops" class="nav-item nav-indic" style="display: none;">
-                                    COUNTERTOPS
+                                <div id="catCountertops" class="nav-item nav-indic">
+                                    <button>
+                                        COUNTERTOPS
+                                    </button>
+
+                                </div>
+                                <br>
+                                <div id="catHandles" class="nav-item nav-indic">
+                                    <button>
+                                        HANDLES
+                                    </button>
+
                                 </div>
                             </li>
 
@@ -87,7 +107,9 @@
                                 <div class="nav-sub">
                                     kolierkitchen@hotmail.com
                                     <br>
-                                    647-526-3566
+                                    (416) 510-1248
+                                    <br>
+                                    (647) 526-3566
                                 </div>
                             </li>
                         </ul>
@@ -95,15 +117,15 @@
                     <footer>
                         <div class="nav-sub">
                             Made By: <a href="https://jaks024.github.io/" target="_blank"
-                                style="color: rgb(62, 94, 110); font-weight: bold;">JAKS</a>
+                                style="color: rgb(122, 122, 122); font-weight: bold;">jaks024</a>
                         </div>
                     </footer>
                 </div>
             </div>
         </div>
         <div class="wrapper-content">
-            <div class="wrapper-scroll" data-simplebar>
-                <div class="content">
+            <div id="scroll-detect" class="wrapper-scroll">
+                <div id="content" class="content">
                     <div class="wrapper-img-col w-img-col-1">
                         <div id="imgCol0" class="img-col">
 
@@ -114,6 +136,16 @@
                             <!--<img class="img-item" src="imgs/cabinets/2.jpg">-->
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div id="img-zoom-wrapper">
+            <div id="img-zoom-close-btn">
+                <button>&#10006;</button>
+            </div>
+            <div class="img-zoom-content">
+                <div class="img-zoom-src-wrapper">
+                    <img id="img-zoom-src" src="imgs/magnified/12.webp" alt="fullscreen view of the selected image">
                 </div>
             </div>
         </div>
