@@ -171,6 +171,7 @@ button{
     min-height: 700px;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .wrapper-comp-name {
@@ -238,7 +239,8 @@ nav > ul > li {
     line-height: 25px;
     margin-left: 30px;
     padding-left: 10px;
-    width: 90%;
+    width: 85%;
+    overflow: hidden;
     height: 25px;
 }
 
@@ -384,6 +386,7 @@ footer {
     height: 25px;
     text-align: center;
     line-height: 25px;
+    text-shadow: 0px 0px 5px rgb(37, 37, 37);
     transition: color 0.5s ease;
     z-index: 5;
 }
