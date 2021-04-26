@@ -326,6 +326,7 @@ footer {
 }
 
 .img-item {
+    animation: 1s ease-in-out 0s 1 fadeIn;
     cursor: pointer;
     width: 100%;
     height: auto;

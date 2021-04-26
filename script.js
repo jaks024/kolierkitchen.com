@@ -82,7 +82,7 @@ function switchCategory(i) {
     }
     clearImages();
     currentCatInd = i;
-    loadImages(true);
+    loadImages(false);
     catBtns[currentCatInd].classList.add(NAV_SELECTED_CLASS);
     for (let i = 0; i < catBtns.length; ++i) {
         if (i != currentCatInd) {
