@@ -157,7 +157,7 @@ button{
 
 .nav-content{
     height: 100%;
-    min-height: 650px;
+    min-height: 800px;
     display: flex;
     flex-direction: column;
 }
@@ -237,6 +237,16 @@ nav > ul > li {
     padding-left: 10px;
 }
 
+.nav-sub > a{
+    color: rgb(88, 170, 224);
+    transition: color 0.5s ease;
+}
+.nav-sub > a:visited{
+    color: rgb(88, 170, 224);
+}
+.nav-sub > a:hover{
+    color: rgb(64, 122, 187);
+}
 
 footer {
     position: relative;
@@ -299,6 +309,7 @@ footer {
     height: auto;
     object-fit: contain;
     margin: 10px 0px;
+    -webkit-user-drag: none;
     transition: filter 0.5s ease;
 }
 

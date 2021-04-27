@@ -15,11 +15,14 @@ const content = document.getElementById("content");
 let curImgInd = 0;
 let curColInd = 0;
 const sbcontent = document.getElementById("scroll-detect");
-sbcontent.addEventListener('scroll', () => {
-    if (sbcontent.scrollTop > 0.8 * imgColumns[0].offsetHeight  - content.offsetHeight) {
+sbcontent.addEventListener('scroll', dynamicLoadImage);
+
+ function dynamicLoadImage(){
+    if (!isLoadingImages && 
+        sbcontent.scrollTop > 0.8 * imgColumns[0].offsetHeight  - content.offsetHeight) {
         loadImages();
     }
-});
+}
 
 
 const C_SHOW = "show";
@@ -34,21 +37,23 @@ const IMG_ALT = "Kitchen Cabinet image made by Kolier Kitchen.";
 const IMG_CSS_CLASS = "img-item"
 const IMG_DIR = "imgs/";
 const IMG_ZOOM_DIR = "imgs/magnified/";
-const IMG_DIR_CAT = ["finished_works/", "countertops/", "handles/"];
+const IMG_DIR_CAT = ["finished_works/", "countertops/", "handles/", "hardwood/", "gloss/", "accessories/"];
 const IMG_EXT = ".webp";
-const IMG_COUNT = [96, 0, 0];
+const IMG_COUNT = [96, 33, 8, 18, 3, 13];
 const IMG_LOAD_DELAY = 150;
 const IMG_SCROLL_COUNT = 15;
 
 var currentCatInd = 1;
+var isLoadingImages = false;
 
 window.onload = initialLoad;
 
 
 const timer = ms => new Promise(res => setTimeout(res, ms))
 
-async function loadImages(isInit) {
+async function loadImages() {
     for (let i = 0; i < IMG_SCROLL_COUNT; ++i) {
+        isLoadingImages = true;
         if (curImgInd >= IMG_COUNT[currentCatInd]) {
             break;
         }
@@ -63,10 +68,9 @@ async function loadImages(isInit) {
         });
         curColInd = curColInd == 0 ? 1 : 0;
         ++curImgInd;
-        if (!isInit) {
-            await timer(IMG_LOAD_DELAY);
-        }
+        await timer(IMG_LOAD_DELAY);
     }
+    isLoadingImages = false;
 }
 
 function clearImages() {
@@ -82,7 +86,7 @@ function switchCategory(i) {
     }
     clearImages();
     currentCatInd = i;
-    loadImages(false);
+    loadImages();
     catBtns[currentCatInd].classList.add(NAV_SELECTED_CLASS);
     for (let i = 0; i < catBtns.length; ++i) {
         if (i != currentCatInd) {
@@ -105,17 +109,17 @@ const navUnderlay = document.getElementById("navUnderlay");
 const NAV_SELECTED_CLASS = "nav-selected";
 const catBtns = [document.getElementById("catCabinet"),
     document.getElementById("catCountertops"),
-    document.getElementById("catHandles")
+    document.getElementById("catHandles"),
+    document.getElementById("catHardwood"),
+    document.getElementById("catGloss"),
+    document.getElementById("catAccessories")
 ];
-catBtns[0].addEventListener("click", () => {
-    switchCategory(0);
+
+for (let i = 0; i < catBtns.length; ++i) {
+catBtns[i].addEventListener("click", () => {
+    switchCategory(i);
 });
-catBtns[1].addEventListener("click", () => {
-    switchCategory(1);
-});
-catBtns[2].addEventListener("click", () => {
-    switchCategory(2);
-});
+}
 
 navOpenBtn.addEventListener("click", setNavActive);
 navCloseBtn.addEventListener("click", setNavDisable);
@@ -156,7 +160,7 @@ function enableImgZoom(source){
     curZoomIndex = 0;
     checkMobile();
     console.log(isMobile);
-    if (!isMobile) {
+    if (!isMobile && imgZoomWrapper.offsetWidth > 550) {
         imgZoomSrc.style.height = zoomPercents[curZoomIndex];
         imgZoomSrc.style.width = "auto";
     } else {
@@ -168,7 +172,8 @@ function imgZoom(){
     
     checkMobile();
     console.log(isMobile);
-    if (isMobile || imgZoomWrapper.offsetWidth <= 550) {
+    if (isMobile || (!isMobile && imgZoomWrapper.offsetWidth <= 550)) {
+        resetZoom();
         return;
     }
     resettedZoom = false;
