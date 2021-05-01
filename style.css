@@ -346,23 +346,23 @@ footer {
     z-index: 4;
 }
 
-#img-zoom-close-btn{
+#img-zoom-close-btn, #img-zoom-prev-btn, #img-zoom-next-btn{
     position: absolute;
     color: white;
-    font-size: 30px;
+    font-size: 35px;
     right: 50px;
     top: 20px;
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
     text-align: center;
-    line-height: 25px;
-    text-shadow: 0px 0px 5px rgb(37, 37, 37);
+    line-height: 50px;
+    text-shadow: 0px 0px 5px rgb(20, 20, 20);
     transition: color 0.5s ease;
     z-index: 5;
 }
 
-#img-zoom-close-btn:hover{
-    color: rgb(209, 209, 209);
+#img-zoom-close-btn:hover, #img-zoom-prev-btn:hover, #img-zoom-next-btn:hover{
+    color: rgb(163, 163, 163);
 }
 
 .img-zoom-src-wrapper{
@@ -378,6 +378,17 @@ footer {
     transition-property: width, height;
 }
 
+#img-zoom-prev-btn {
+    left: 50px;
+    top: 50%;
+    transform: translate(-50%);
+}
+
+#img-zoom-next-btn {
+    right: 50px;
+    top: 50%;
+    transform: translate(-50%);
+}
 
 img {
     object-fit:contain;

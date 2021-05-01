@@ -81,6 +81,9 @@ function clearImages() {
 }
 
 function switchCategory(i) {
+    if (isMobile || isMinWidth()) {
+        setNavDisable();
+    }
     if (currentCatInd == i) {
         return;
     }
@@ -145,6 +148,8 @@ let curZoomIndex = 0;
 let zoomPercents = ["100%", "125%", "150%", "200%"];
 const imgZoomSrc = document.getElementById("img-zoom-src");
 const imgZoomWrapper =  document.getElementById("img-zoom-wrapper");
+const imgZoomPrevBtn = document.getElementById("img-zoom-prev-btn");
+const imgZoomNextBtn = document.getElementById("img-zoom-next-btn");
 const imgZoomCloseBtn = document.getElementById("img-zoom-close-btn");
 imgZoomCloseBtn.addEventListener("click", () => {
     imgZoomWrapper.style.display = imgZoomEnabled ? "none" : "block";
@@ -153,6 +158,10 @@ imgZoomCloseBtn.addEventListener("click", () => {
 
 imgZoomSrc.addEventListener("click", imgZoom);
 
+function isMinWidth(){
+    return imgZoomWrapper.offsetWidth <= 550;
+}
+
 function enableImgZoom(source){
     imgZoomEnabled = true;
     imgZoomWrapper.style.display = "block";
@@ -160,7 +169,7 @@ function enableImgZoom(source){
     curZoomIndex = 0;
     checkMobile();
     console.log(isMobile);
-    if (!isMobile && imgZoomWrapper.offsetWidth > 550) {
+    if (!isMobile && !isMinWidth()) {
         imgZoomSrc.style.height = zoomPercents[curZoomIndex];
         imgZoomSrc.style.width = "auto";
     } else {
@@ -172,7 +181,7 @@ function imgZoom(){
     
     checkMobile();
     console.log(isMobile);
-    if (isMobile || (!isMobile && imgZoomWrapper.offsetWidth <= 550)) {
+    if (isMobile || (!isMobile && isMinWidth())) {
         resetZoom();
         return;
     }
