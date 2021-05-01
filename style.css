@@ -131,6 +131,7 @@ button{
 }
 
 .language-btn {
+    display: none;
     position: absolute;
     top: 38px;
     font-size: 25px;
@@ -351,7 +352,6 @@ footer {
     color: white;
     font-size: 35px;
     right: 50px;
-    top: 20px;
     width: 50px;
     height: 50px;
     text-align: center;
@@ -359,6 +359,9 @@ footer {
     text-shadow: 0px 0px 5px rgb(20, 20, 20);
     transition: color 0.5s ease;
     z-index: 5;
+}
+#img-zoom-close-btn {
+    top: 20px;
 }
 
 #img-zoom-close-btn:hover, #img-zoom-prev-btn:hover, #img-zoom-next-btn:hover{
@@ -379,15 +382,13 @@ footer {
 }
 
 #img-zoom-prev-btn {
-    left: 50px;
-    top: 50%;
-    transform: translate(-50%);
+    right: 51%;
+    bottom: 25px;
 }
 
 #img-zoom-next-btn {
-    right: 50px;
-    top: 50%;
-    transform: translate(-50%);
+    left: 51%;
+    bottom: 25px;
 }
 
 img {
