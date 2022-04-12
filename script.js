@@ -34,7 +34,7 @@ const IMG_DIR = "imgs/";
 const IMG_ZOOM_DIR = "imgs/magnified/";
 const IMG_DIR_CAT = ["finished_works/", "countertops/", "handles/", "hardwood/", "gloss/", "accessories/"];
 const IMG_EXT = ".webp";
-const IMG_COUNT = [96, 33, 8, 18, 3, 13];
+const IMG_COUNT = [56, 33, 8, 18, 3, 13];
 const IMG_LOAD_DELAY = 150;
 const IMG_SCROLL_COUNT = 15;
 
